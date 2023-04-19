@@ -24,7 +24,7 @@ jobs:
             - name: Build on dev branch
               run: |
                   git checkout dev
-                  # Run the build scripts here
+                  node index-dev.js
 
             - name: Push changes to dev branch
               run: |
