@@ -18,7 +18,7 @@ jobs:
                   git config --global user.email 'action@github.com'
                   git fetch
                   git checkout dev   
-                  git checkout ${GITHUB_REF##*/} -- .
+                  git checkout ${GITHUB_REF##*/} -- ./src
 
             - name: Build on dev branch
               run: |
