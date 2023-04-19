@@ -27,6 +27,6 @@ jobs:
 
             - name: Push changes to dev branch
               run: |
-                  git add .
+                  git add src docs
                   git commit -m "Build new files"
                   git push origin dev
