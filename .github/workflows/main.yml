@@ -12,6 +12,7 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
+            - name: Copy
               run: |
                   git config --global user.name 'GitHub Action'
                   git config --global user.email 'action@github.com'
