@@ -12,16 +12,12 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
-              with:
-                  ref: dev
-
-            - name: Copy source files to dev branch
               run: |
-                  git checkout dev
-                  git checkout main -- .
-                  git add .
-                  git commit -m "Update source files from main branch"
-                  git push origin dev
+                  git config --global user.name 'GitHub Action'
+                  git config --global user.email 'action@github.com'
+                  git fetch
+                  git checkout dev   
+                  git checkout ${GITHUB_REF##*/} -- .
 
             - name: Build on dev branch
               run: |
